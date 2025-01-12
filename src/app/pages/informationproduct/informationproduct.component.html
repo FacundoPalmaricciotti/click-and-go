@@ -1,0 +1,23 @@
+<div *ngIf="isLoading" class="spinner">
+  <div class="loader"></div>
+  Cargando productos...
+</div>
+
+<div *ngIf="!isLoading" class="product-container">
+  <div class="product-images">
+    <img [src]="product.image" [alt]="product.title" />
+  </div>
+  <div class="product-details">
+    <p class="product-category">{{ product?.category }}</p>
+    <h1 class="product-name">{{ product.title }}</h1>
+    <p class="product-description">
+      <span *ngFor="let line of (product.description || '').split('\\n')">
+        {{ line }}
+        <br />
+      </span>
+    </p>
+    <p class="product-price">
+      ${{ product.price | number:'1.0-2' }}
+    </p>
+  </div>
+</div>

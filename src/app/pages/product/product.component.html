@@ -1,0 +1,25 @@
+<div class="product-container">
+  <h1 class="Titulo">PRODUCTOS</h1>
+          <div *ngIf="isLoading" class="spinner">
+          <div class="loader"></div>
+          Cargando productos...
+        </div>
+        
+  <div *ngIf="!isLoading" class="products-list">
+    <div class="product-card" *ngFor="let product of products"
+      [routerLink]="['/information', product.id]"
+    >
+    <a>
+      <div class="product-image">
+        <img [src]="product.image" [alt]="'Imagen de ' + product.title" />
+      </div>
+      <div class="product-info">
+        <h3>{{ product.title }}</h3>
+        <p>{{ formatPrice(product.price) }}</p>
+        <p>{{ product.description | truncate:5 }}</p>
+      </div>
+    </a>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

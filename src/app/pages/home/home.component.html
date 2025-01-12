@@ -1,0 +1,44 @@
+<div class="home-container">
+    <!-- Banner Principal -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="Titulo">Bienvenido a nuestra tienda</h1>
+        <p class="Subt">Encuentra productos increíbles a precios inigualables</p>
+
+        <button routerLink="/product" class="btn-primary">Ver Productos</button>
+        <div class="rainbow-arc"></div>
+      </div>
+    </section>
+  
+    <section class="featured-products">
+        <h2>Productos destacados</h2>
+    
+        <!-- Spinner de carga -->
+        <div *ngIf="isLoading" class="spinner">
+          <div class="loader"></div>
+          Cargando productos...
+        </div>
+    
+        <!-- Mostrar los productos obtenidos de la API -->
+        <div *ngIf="!isLoading" class="product-list">
+          <div class="product-item" *ngFor="let product of featuredProducts"
+          [routerLink]="['/information', product.id]">
+            <a>
+            <img [src]="product.image" alt="{{ product.title }}" />
+            <h3>{{ product.title }}</h3>
+            <p>${{ product.price | number }}</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    <!-- Beneficios -->
+    <section class="benefits">
+        <h2>¿Por qué comprar con nosotros?</h2>
+        <ul>
+          <li>Devoluciones sin costo</li>
+          <li>Pago seguro con tarjeta o efectivo</li>
+          <li>Envío gratis en compras mayores a $100</li>
+        </ul>
+      </section>      
+  </div>
+  <router-outlet></router-outlet>
