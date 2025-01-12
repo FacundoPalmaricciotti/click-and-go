@@ -37,66 +37,65 @@
   margin-bottom: 20px;
 }
 
-/* Botón básico */
 .btn-primary {
   display: inline-block;
   padding: 15px 30px;
   font-size: 1.2rem;
   font-weight: bold;
   color: white;
-  background-color: #2C6B53; /* Verde selva */
+  background-color: #2C6B53; 
   border: 2px solid transparent;
   border-radius: 10px;
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden; /* Esconde efectos fuera del botón */
+  overflow: hidden; 
   z-index: 1;
 }
 
-/* Hover: Fondo arcoíris pastel y texto verde */
+
 .btn-primary:hover {
-  border-color: gold; /* Bordes dorados */
-  background: linear-gradient(90deg, #FFB3BA, #FFDFBA, #FFFFBA, #BAFFC9, #BAE1FF, #E3BAFF, #FFB3BA); /* Colores pastel */
+  border-color: gold; 
+  background: linear-gradient(90deg, #FFB3BA, #FFDFBA, #FFFFBA, #BAFFC9, #BAE1FF, #E3BAFF, #FFB3BA); 
   background-size: 300%;
   animation: pastel-rainbow-move 3s linear infinite;
-  color: #2C6B53; /* Verde selva */
-  text-shadow: 0 0 5px gold; /* Brillo dorado */
+  color: #2C6B53; 
+  text-shadow: 0 0 5px gold; 
 }
 
-/* Arcoíris al hacer clic (fuera del botón) */
+
 .rainbow-arc {
   position: absolute;
-  top: -80px; /* Arco por encima del botón */
-  left: -50%; /* Comienza fuera del botón */
-  width: 200%; /* Ancho suficiente para el arcoíris */
+  top: -80px; 
+  left: -50%; 
+  width: 200%; 
   height: 200px;
   background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
   background-size: 200%;
-  border-radius: 50%; /* Crea la forma del arco */
+  border-radius: 50%; 
   opacity: 0;
-  z-index: 10; /* Siempre encima */
+  z-index: 10; 
   animation: draw-rainbow 2s ease-out forwards;
   pointer-events: none;
 }
 
-/* Animación del arcoíris al hacer clic */
+
 @keyframes draw-rainbow {
   0% {
-    transform: translateX(50%) scale(0); /* Comienza pequeño y fuera de la vista */
+    transform: translateX(50%) scale(0);
     opacity: 1;
   }
   50% {
-    transform: translateX(0%) scale(1); /* Se centra y crece */
+    transform: translateX(0%) scale(1); 
   }
   100% {
-    transform: translateX(-50%) scale(1.5); /* Desaparece hacia la izquierda */
+    transform: translateX(-50%) scale(1.5); 
     opacity: 0;
   }
 }
 
-/* Animación de movimiento del fondo pastel (hover) */
+
 @keyframes pastel-rainbow-move {
   0% { background-position: 0%; }
   100% { background-position: 300%; }
@@ -108,9 +107,6 @@
 }
 
 
-
-
-/* Spinner de carga */
 .spinner {
   display: flex;
   justify-content: center;
@@ -121,12 +117,12 @@
 }
 
 .loader {
-  border: 8px solid #f3f3f3; /* Gris claro */
-  border-top: 8px solid #4d6c39; /* Verde cactus */
+  border: 8px solid #f3f3f3; 
+  border-top: 8px solid #4d6c39; 
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  animation: spin 2s linear infinite; /* Animación de rotación */
+  animation: spin 2s linear infinite; 
 }
 
 @keyframes spin {
@@ -134,7 +130,7 @@
   100% { transform: rotate(360deg); }
 }
 
-/* Productos destacados */
+
 .featured-products {
   text-align: center;
   padding: 5px;
@@ -143,30 +139,30 @@
 
 .featured-products h2 {
   font-size: 2rem;
-  color: #4d6c39;  /* Verde cactus */
+  color: #4d6c39;  
   margin-bottom: 20px;
 }
 
-/* Contenedor de productos */
+
 .product-list {
   display: flex;
-  justify-content: center;  /* Productos alineados con separación */
-  gap: 15px; /* Separación de solo 2px entre los productos */
-  flex-wrap: wrap; /* Los productos se ajustan si hay menos espacio */
+  justify-content: center; 
+  gap: 15px; 
+  flex-wrap: wrap; 
   margin: 0 auto;
   max-width: 1200px;
 }
 
-/* Producto */
+
 .product-item {
   background-color: #f5f5f5;
   padding: 10px;
-  border-radius: 12px; /* Bordes más redondeados */
-  width: 250px; /* Tamaño fijo para los productos */
+  border-radius: 12px;
+  width: 250px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer; /* Hace que la tarjeta sea clickeable */
+  cursor: pointer; 
 }
 
 .product-item:hover {
@@ -176,8 +172,8 @@
 
 .product-item img {
   max-width: 100%;
-  height: 180px; /* Imágenes más pequeñas */
-  object-fit: cover; /* Asegura que la imagen cubra bien el contenedor sin distorsionarse */
+  height: 180px; 
+  object-fit: cover;
   border-radius: 8px;
 }
 
@@ -192,9 +188,9 @@
   color: #777;
 }
 
-/* No botones, el click va directamente al producto */
+
 .product-item:active {
-  transform: scale(0.98); /* Le da un pequeño efecto de "click" */
+  transform: scale(0.98);
 }
 
 

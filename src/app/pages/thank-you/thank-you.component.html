@@ -1,0 +1,21 @@
+<div class="thank-you-container">
+  <div class="thank-you-card">
+    <div class="animation-wrapper">
+      <div class="checkmark">
+        <div class="checkmark-circle"></div>
+        <div class="checkmark-stem"></div>
+        <div class="checkmark-kick"></div>
+      </div>
+    </div>
+    <h1>¡Muchísimas gracias, {{ name }}!</h1>
+    <p class="thank-you-text">
+      Por tu mensaje. En la brevedad nos estaremos contactando contigo. 
+      Te invitamos a seguir recorriendo nuestra página.
+    </p>
+    <div class="message-bubble">
+      <p>{{ message }}</p>
+    </div>
+
+    <button (click)="goBackToHome()" (click)="playSound()" class="home-btn">Volver al inicio</button>
+  </div>
+</div>

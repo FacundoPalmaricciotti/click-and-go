@@ -13,7 +13,7 @@ import { ProductService } from '../product/product.service';
 export class InformationProductComponent implements OnInit {
   product: any = null;
   error: string | null = null;
-  isLoading: boolean = true; // Estado de carga
+  isLoading: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,31 +21,29 @@ export class InformationProductComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
-    const productId = this.route.snapshot.paramMap.get('id'); // Obtener el ID de la URL
+    const productId = this.route.snapshot.paramMap.get('id');
 
     if (productId) {
-      // Comprobar si el producto ya está en el almacenamiento local
       const cachedProduct = localStorage.getItem(`product_${productId}`);
       if (cachedProduct) {
         this.product = JSON.parse(cachedProduct);
-        this.isLoading = false; // Ya tenemos el producto, ocultamos el spinner
+        this.isLoading = false; 
       } else {
         try {
-          this.isLoading = true; // Comienza a cargar el producto
+          this.isLoading = true; 
           this.product = await this.productService.getProductById(productId);
           
-          // Guardar el producto en el localStorage para futuras visitas
           localStorage.setItem(`product_${productId}`, JSON.stringify(this.product));
         } catch (err) {
           console.error('Error loading product details:', err);
           this.error = 'Error al cargar el producto.';
         } finally {
-          this.isLoading = false; // Termina la carga del producto
+          this.isLoading = false;
         }
       }
     } else {
       this.error = 'ID de producto no válido.';
-      this.isLoading = false; // Termina la carga, aunque no se encontró el producto
+      this.isLoading = false;
     }
   }
 }

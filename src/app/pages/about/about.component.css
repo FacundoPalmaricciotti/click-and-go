@@ -1,0 +1,133 @@
+.contact-container {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  min-height: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #164a41;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.contact-title {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 35px;
+  font-weight: bold;
+  color: #ffff;
+  text-align: center;
+}
+
+.contact-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffff;
+  text-align: left;
+  width: 70%;
+}
+
+.contact-input {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 2px solid #ffff;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  color: #ffff;
+  transition: border-color 0.3s;
+  text-align: left;
+}
+
+.contact-input::placeholder {
+  color: #fff;
+}
+.contact-button {
+  width: 200px;
+  padding: 15px 20px;
+  background-color: #4caf50; 
+  color: white;
+  border: none;
+  border-radius: 30px; 
+  font-size: 18px; 
+  font-weight: bold; 
+  text-transform: uppercase; 
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); 
+}
+
+.contact-button:hover {
+  background-color: #45a049;
+  transform: translateY(
+    -3px
+  ); 
+  box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3); 
+}
+
+.contact-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.contact-button:active {
+  transform: translateY(1px);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.footer-text {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.contact-link {
+  color: #f1b24a;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+.contact-textarea {
+  width: 350px;
+  height: 100px; 
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  border-radius: 8px; 
+  background: rgba(255, 255, 255, 0.1); 
+  font-size: 16px;
+  outline: none;
+  color: #ffff;
+  resize: none; 
+  transition: border-color 0.3s, background-color 0.3s; 
+}
+
+.contact-textarea::placeholder {
+  color: #d1d1d1;
+  font-style: italic;
+}
+
+.contact-textarea:focus {
+  border-color: #4d774e; 
+  background-color: rgba(255, 255, 255, 0.2); 
+  box-shadow: 0 0 8px rgba(77, 119, 78, 0.6); 
+}
